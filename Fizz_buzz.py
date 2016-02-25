@@ -11,3 +11,18 @@ Entrada: Un número como un entero.
 
 Salida: La respuesta como una cadena de caracteres.
 """
+
+def fizz_buzz (number):
+  
+  answer = None
+  
+  if number % 3 == 0 and number % 5 == 0:
+      answer = "Fizz Buzz"
+      
+  elif number % 3 == 0:
+      answer = "Fizz"
+      
+  elif number % 5 == 0:
+      answer = "Buzz"
+        
+  return answer
