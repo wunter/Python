@@ -26,3 +26,10 @@ def fizz_buzz (number):
       answer = "Buzz"
         
   return answer
+
+#Comprobar solución 
+
+fizz_buzz (15) # "Fizz Buzz", "15 is divisible by 3 and 5"
+fizz_buzz (6)  # "Fizz", "6 is divisible by 3"
+fizz_buzz (5)  # "Buzz", "5 is divisible by 5"
+fizz_buzz (7)  # "7 is not divisible by 3 or 5"
