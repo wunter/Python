@@ -14,7 +14,7 @@ Salida: La respuesta como una cadena de caracteres.
 
 def fizz_buzz (number):
   
-  answer = None
+  answer = number
   
   if number % 3 == 0 and number % 5 == 0:
       answer = "Fizz Buzz"
