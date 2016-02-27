@@ -1,0 +1,57 @@
+
+3
+down vote
+favorite
+2
+I have this example xml file
+
+<page>
+  <title>Chapter 1</title>
+  <content>Welcome to Chapter 1</content>
+</page>
+<page>
+ <title>Chapter 2</title>
+ <content>Welcome to Chapter 2</content>
+</page>
+I like to extract the contents of title tags and content tags.
+
+Which method is good to extract the data, using pattern matching or using xml module. Or is there any better way to extract the data.
+
+python xml
+shareimprove this question
+asked Oct 7 '11 at 18:40
+
+Sudeep
+69137
+  	 	
+If you know the xml module, why don't you use it? – JBernardo Oct 7 '11 at 18:50
+add a comment
+2 Answers
+active oldest votes
+up vote
+7
+down vote
+accepted
+There is already a built-in XML library, notably ElementTree. For example:
+
+>>> from xml.etree import cElementTree as ET
+>>> xmlstr = """
+... <root>
+... <page>
+...   <title>Chapter 1</title>
+...   <content>Welcome to Chapter 1</content>
+... </page>
+... <page>
+...  <title>Chapter 2</title>
+...  <content>Welcome to Chapter 2</content>
+... </page>
+... </root>
+... """
+>>> root = ET.fromstring(xmlstr)
+>>> for page in list(root):
+...     title = page.find('title').text
+...     content = page.find('content').text
+...     print('title: %s; content: %s' % (title, content))
+...
+title: Chapter 1; content: Welcome to Chapter 1
+title: Chapter 2; content: Welcome to Chapter 2
