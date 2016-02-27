@@ -18,8 +18,8 @@ def zip_law (dist_frec, scale = 'log'):
     		pyplot.yscale(scale)
     		
     	pyplot.title('Zipf plot')
-	pyplot.xlabel('rank')
-    	pyplot.ylabel('frequency')
+	pyplot.xlabel('Rank')
+    	pyplot.ylabel('Frequency')
     	pyplot.plot(rs, fs, 'r-')
     	return pyplot.show()
 		
