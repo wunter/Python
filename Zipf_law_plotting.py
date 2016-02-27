@@ -12,13 +12,19 @@ def zip_law (dist_frec, scale = 'log'):
 	rank, frec = zip(*frecuencia_rank)
 	
 	pyplot.clf()
-    pyplot.xscale(scale)
-    pyplot.yscale(scale)
-    pyplot.title('Zipf plot')
-    pyplot.xlabel('rank')
-    pyplot.ylabel('frequency')
-    pyplot.plot(rs, fs, 'r-')
-    return pyplot.show()
+	
+	if scale:
+		pyplot.xscale(scale)
+    		pyplot.yscale(scale)
+    		
+    	pyplot.title('Zipf plot')
+	pyplot.xlabel('rank')
+    	pyplot.ylabel('frequency')
+    	pyplot.plot(rs, fs, 'r-')
+    	return pyplot.show()
+		
+	
+
         
 
 
