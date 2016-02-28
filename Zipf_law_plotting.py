@@ -15,14 +15,14 @@ def zipf_law (dist_frec, scale = 'log'): # Cambiar a False para desactivar
 	
 	if scale:
 		pyplot.xscale(scale)
-    pyplot.yscale(scale)
+    		pyplot.yscale(scale)
     		
-  pyplot.title('Zipf plot')
-  pyplot.xlabel('Rank')
-  pyplot.ylabel('Frequency')
-  pyplot.plot(rs, fs, 'r-')
+  	pyplot.title('Zipf plot')
+  	pyplot.xlabel('Rank')
+  	pyplot.ylabel('Frequency')
+  	pyplot.plot(rs, fs, 'r-')
     	
-  return pyplot.show()
+  	return pyplot.show()
 		
 	
 
