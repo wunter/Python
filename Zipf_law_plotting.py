@@ -18,7 +18,7 @@ def zipf_law (dist_frec, scale = 'log'): # Cambiar a False para desactivar
     pyplot.yscale(scale)
     		
   pyplot.title('Zipf plot')
-	pyplot.xlabel('Rank')
+  pyplot.xlabel('Rank')
   pyplot.ylabel('Frequency')
   pyplot.plot(rs, fs, 'r-')
     	
