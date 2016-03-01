@@ -24,3 +24,6 @@ scores = {'de'{contexto1: 6, contexto2: 19,...},'mujer':{ contexto1: 5, contexto
 
 
 diccionario[contexto] * scores
+
+
+
