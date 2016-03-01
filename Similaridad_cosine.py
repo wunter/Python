@@ -8,7 +8,7 @@ def cosine_similarity(sent1, sent2): #
     Thanks to @vpekar, see http://goo.gl/ykibJY
     """
     WORD = re.compile(r'\w+')
-    def get_cosine(vec1, vec2):
+    def get_cosine(vec1, vec2): # los vectores son diccionarios de frecuencia
         intersection = set(vec1.keys()) & set(vec2.keys())
         numerator = sum([vec1[x] * vec2[x] for x in intersection])
         
