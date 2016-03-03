@@ -47,9 +47,9 @@ def zipf_law (texto, scale = False, s = 0.5):
 	
 	# Distribución de Zipf ideal
 	
-	t = 1/sum([float(kn)**-s for kn in range(1,len(texto)])
+	t = 1/sum([float(kn)**-s for kn in range(1,len(texto))])
 	
-	zipf_ideal = [(k , t * (k**-s)) for k in range(1,len(texto)]
+	zipf_ideal = [(k , t * (k**-s)) for k in range(1,len(texto))]
 
 	
 	# Plotear los datos obtenidos en una gráfica
@@ -64,14 +64,14 @@ def zipf_law (texto, scale = False, s = 0.5):
 	
 	if scale:
 		pyplot.xscale(scale)
-    pyplot.yscale(scale)
-    		
-  pyplot.title('Zipf plot')
-  pyplot.xlabel('Rank')
-  pyplot.ylabel('Frequency')
-  pylab.legend(loc='upper left')
+		pyplot.yscale(scale)
+		
+    	pyplot.title('Zipf plot')
+    	pyplot.xlabel('Rank')
+    	pyplot.ylabel('Frequency')
+    	pylab.legend(loc='upper left')
     	
-  return pyplot.show()
+    	return pyplot.show()
 		
 	
 
