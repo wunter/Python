@@ -1,6 +1,8 @@
-# Esta función toma un diccionario con la distribución de frecuencia y plotea la ley de Zipf
 
-
+import re
+import matplotlib
+from matplotlib import pyplot
+import pylab
 
 def zipf_law (texto, scale = False):
 
@@ -13,10 +15,7 @@ def zipf_law (texto, scale = False):
 	Prob(r) -> the probability of a word at rank r. Prob(r) = freq(r) / N
 	N -> numero total de palabras en el texto (NO palabras únicas)
 	A -> constante. Para calcular A = (r * freq(r))/N 
-
 	scale = cambiar a False para desactivar / 'log' escala logaritmica
-
-
 	'''
 	# Distribución de frecuencia
 	dist_frec = {}
@@ -32,13 +31,13 @@ def zipf_law (texto, scale = False):
 	
 	frecuencia.sort(reverse = True)
 	
-	datos_zipf = [(rank, frec for rank,frec in enumerate(frecuencia)]
+	datos_zipf = [(rank, frec) for rank,frec in enumerate(frecuencia)]
 	
 	
 	# Distribución de Zipf ideal
-	a_values = [rank*(frec/len(texto)) for rank, frec in datos_zipf]
-	constant_a = sum(a_values)/len(a_values)
+	a_values = [(rank*(frec/len(texto))) for rank, frec in datos_zipf]
 
+	constant_a = sum(a_values)/len(a_values)
 
 	zipf_ideal = [(n,(constant_a*len(texto))/n) for n in range(1,len(texto))]
 
@@ -57,17 +56,11 @@ def zipf_law (texto, scale = False):
 		pyplot.xscale(scale)
 		pyplot.yscale(scale)
 		
-    	pyplot.title('Zipf plot')
-    	pyplot.xlabel('Rank')
-    	pyplot.ylabel('Frequency')
-    	pylab.legend(loc='upper left')
-    	
-    	return pyplot.show()
-		
+	pyplot.title('Zipf plot')
+	pyplot.xlabel('Rank')
+	pyplot.ylabel('Frequency')
+	pylab.legend(loc='upper right')
 	
-
-        
-
-
+	return pyplot.show()
 
 
