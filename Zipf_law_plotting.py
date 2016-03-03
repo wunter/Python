@@ -7,22 +7,12 @@ def zipf_law (texto, scale = False, s = 0.5):
 	'''
 	Calcular la ley de Zipf.
 	
-	fi = t * (ki **-s) -->	frecuencia del elemento i es el resultado de t por el rango k del elemento i elevado a -s
+	r * Prob(r) = A
 	
-	fi -> frecuencia del elemento i
-	t  -> factor de normalización
-	s  -> es un parámetro que controla la influencia del rank sobre la frecuencia 
-	ki -> rango del elemento i
-	
-	Para calcular t
-	
-	t = (Sumatoria de N elementos kn**-s)**-1
-	
-	t = 1/sum([float(kn)**-s for kn in range(1,N+1)])
-	
-	N -> total de elementos
-	
-	
+	r -> rank
+	Prob(r) -> the probability of a word at rank r. Prob(r) = freq(r) / N
+	N -> numero total de palabras en el texto (NO palabras únicas)
+	A -> constante. Para calcular A = (r * freq(r))/N 
 
 	scale = cambiar a False para desactivar / 'log' escala logaritmica
 
@@ -46,10 +36,11 @@ def zipf_law (texto, scale = False, s = 0.5):
 	
 	
 	# Distribución de Zipf ideal
-	
-	t = 1/sum([float(kn)**-s for kn in range(1,len(texto))])
-	
-	zipf_ideal = [(k , t * (k**-s)) for k in range(1,len(texto))]
+	a_values = [rank*(frec/len(texto)) for rank, frec in datos_zipf]
+	constant_a = sum(a_values)/len(a_values)
+
+
+	zipf_ideal = [(n,(constant_a*len(texto))/n) for n in range(1,len(texto))]
 
 	
 	# Plotear los datos obtenidos en una gráfica
