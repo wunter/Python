@@ -2,7 +2,7 @@
 
 
 
-def zipf_law (texto, scale = False, s = 0.5):
+def zipf_law (texto, scale = False):
 
 	'''
 	Calcular la ley de Zipf.
